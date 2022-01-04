@@ -284,7 +284,7 @@ async fn start_ib(
         .add_discons(config.map_attributes(&request.attributes)?)
         .augmented_return_url(request.continuation.clone())
         .build();
-    
+
     let session = config.irma_server().request(&session_request).await?;
 
     Ok(Json(StartAuthResponse {
